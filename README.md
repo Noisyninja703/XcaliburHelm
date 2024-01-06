@@ -15,4 +15,3 @@ A basic card game made in Godot 4.2
 -     Resource cards
 -     Card combat
 -     Card abilities
-
