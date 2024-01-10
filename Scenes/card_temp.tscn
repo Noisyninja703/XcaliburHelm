@@ -1,0 +1,198 @@
+[gd_scene load_steps=12 format=3 uid="uid://bhp6caymlnlm3"]
+
+[ext_resource type="Script" path="res://Scripts/cardTemp.gd" id="1_pry2i"]
+[ext_resource type="Texture2D" uid="uid://bpihgfynlpuqg" path="res://Assets/Border.png" id="2_v3y5l"]
+
+[sub_resource type="Gradient" id="Gradient_7y76y"]
+offsets = PackedFloat32Array(0.12987, 0.850649)
+colors = PackedColorArray(0.541183, 0.34817, 0.139766, 1, 1, 0.612217, 0.325718, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_22drb"]
+gradient = SubResource("Gradient_7y76y")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_pepgm"]
+interpolation_mode = 2
+colors = PackedColorArray(0, 0, 0, 0.588235, 0.219608, 0.372549, 0.368627, 0.588235)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tyuxi"]
+gradient = SubResource("Gradient_pepgm")
+fill_from = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_ow1no"]
+colors = PackedColorArray(0.0885599, 0.0885599, 0.0885599, 0.392157, 0.188235, 0.188235, 0.188235, 0.392157)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dw6yh"]
+gradient = SubResource("Gradient_ow1no")
+fill_from = Vector2(0, 0.132479)
+fill_to = Vector2(0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h4xyy"]
+line_spacing = 0.5
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_b06uf"]
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_j0jh1"]
+font_size = 12
+
+[node name="cardTemp" type="MarginContainer"]
+offset_right = 200.0
+offset_bottom = 300.0
+pivot_offset = Vector2(100, 150)
+script = ExtResource("1_pry2i")
+
+[node name="Card" type="Sprite2D" parent="."]
+scale = Vector2(3.10938, 4.67188)
+texture = SubResource("GradientTexture2D_22drb")
+centered = false
+
+[node name="Border" type="Sprite2D" parent="."]
+texture = ExtResource("2_v3y5l")
+centered = false
+
+[node name="CardArt" type="Sprite2D" parent="."]
+position = Vector2(0, 46)
+centered = false
+
+[node name="Bars" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TopGap" type="MarginContainer" parent="Bars"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="TopBar" type="HBoxContainer" parent="Bars"]
+layout_mode = 2
+
+[node name="LeftGap" type="MarginContainer" parent="Bars/TopBar"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="Name" type="MarginContainer" parent="Bars/TopBar"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/TopBar/Name"]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_tyuxi")
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/TopBar/Name"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Bars/TopBar/Name/CenterContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Knight"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MidGap" type="MarginContainer" parent="Bars/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Cost" type="MarginContainer" parent="Bars/TopBar"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/TopBar/Cost"]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_tyuxi")
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/TopBar/Cost"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Bars/TopBar/Cost/CenterContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RightGap" type="MarginContainer" parent="Bars/TopBar"]
+layout_mode = 2
+theme_override_constants/margin_right = 10
+
+[node name="MidGap" type="MarginContainer" parent="Bars"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 132
+theme_override_constants/margin_right = 10
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/MidGap"]
+custom_minimum_size = Vector2(180, 80)
+layout_mode = 2
+texture = SubResource("GradientTexture2D_dw6yh")
+
+[node name="HFlowContainer" type="HFlowContainer" parent="Bars/MidGap/NinePatchRect"]
+layout_mode = 0
+offset_right = 190.0
+offset_bottom = 80.0
+
+[node name="Desc" type="Label" parent="Bars/MidGap/NinePatchRect/HFlowContainer"]
+custom_minimum_size = Vector2(180, 80)
+layout_direction = 2
+layout_mode = 2
+text = "Description
+
+Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text "
+label_settings = SubResource("LabelSettings_h4xyy")
+autowrap_mode = 3
+text_overrun_behavior = 2
+max_lines_visible = 6
+visible_characters_behavior = 3
+
+[node name="LowGap" type="MarginContainer" parent="Bars"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="TopBar" type="HBoxContainer" parent="Bars/LowGap"]
+layout_mode = 2
+
+[node name="LeftGap" type="MarginContainer" parent="Bars/LowGap/TopBar"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="Attack" type="MarginContainer" parent="Bars/LowGap/TopBar"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/LowGap/TopBar/Attack"]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_tyuxi")
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/LowGap/TopBar/Attack"]
+layout_mode = 2
+
+[node name="Atk" type="Label" parent="Bars/LowGap/TopBar/Attack/CenterContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Attack: 9999"
+label_settings = SubResource("LabelSettings_b06uf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MidGap" type="MarginContainer" parent="Bars/LowGap/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Defence" type="MarginContainer" parent="Bars/LowGap/TopBar"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/LowGap/TopBar/Defence"]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_tyuxi")
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/LowGap/TopBar/Defence"]
+layout_mode = 2
+
+[node name="Def" type="Label" parent="Bars/LowGap/TopBar/Defence/CenterContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Defence: 999"
+label_settings = SubResource("LabelSettings_j0jh1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RightGap" type="MarginContainer" parent="Bars/LowGap/TopBar"]
+layout_mode = 2
+theme_override_constants/margin_right = 10

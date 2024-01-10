@@ -7,6 +7,7 @@ A basic card game made in Godot 4.2
 -     Deal from deck to player hand
 -     Print player's current hand
 -     Run start of game
+-     Display player hands
 
 ## In Planning
 -     Basic card GUI
