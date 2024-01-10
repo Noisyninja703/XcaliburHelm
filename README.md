@@ -8,6 +8,9 @@ A basic card game made in Godot 4.2
 -     Print player's current hand
 -     Run start of game
 -     Game Logic Controller Node
+-     Display player hands
+
+
 
 ## In Planning
 -     Basic card GUI
