@@ -7,7 +7,10 @@ A basic card game made in Godot 4.2
 -     Deal from deck to player hand
 -     Print player's current hand
 -     Run start of game
+-     Game Logic Controller Node
 -     Display player hands
+
+
 
 ## In Planning
 -     Basic card GUI
@@ -16,4 +19,3 @@ A basic card game made in Godot 4.2
 -     Resource cards
 -     Card combat
 -     Card abilities
-
